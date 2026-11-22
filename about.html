@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Delaila Chentika Kimhwa</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Layout Grid 2 Kolom untuk Education & Technical Skills */
+        .about-extra-section {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+            align-items: start;
+        }
+        @media (max-width: 992px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .info-card {
+            background: #ffffff;
+            border: 1px solid rgba(229, 107, 130, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(229, 107, 130, 0.12);
+            border-color: rgba(229, 107, 130, 0.4);
+        }
+        .info-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 4px;
+        }
+        .info-subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            color: #e56b82;
+            margin-bottom: 2px;
+        }
+        .info-period {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .info-card p:last-child {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .skill-badge {
+            background: #fff0f3;
+            color: #e56b82;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(229, 107, 130, 0.2);
+        }
+
+        /* Kartu Memanjang CV & Portofolio EPM (Disamakan dengan .interest-card) */
+        .feature-wide-list {
+            max-width: 900px;
+            margin: 60px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .feature-card-wide {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 16px;
+            padding: 30px 36px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s ease;
+        }
+        .feature-card-wide:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(229, 107, 130, 0.15);
+        }
+        .feature-card-icon {
+            font-size: 40px;
+            color: #e56b82;
+            margin-bottom: 16px;
+        }
+        .feature-card-wide h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+        }
+        .feature-card-wide p {
+            max-width: 720px;
+            margin: 0 auto 16px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .feature-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #e56b82;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .feature-card-link:hover {
+            color: #bd4b64;
+        }
+
+        /* Layout Grid 2 Kolom untuk Experience & Achievements */
+        .about-cv-section {
+            margin-top: 60px;
+        }
+        .cv-container-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+            align-items: start;
+        }
+        @media (max-width: 992px) {
+            .cv-container-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .cv-category {
+            margin-bottom: 30px;
+        }
+        .cv-category h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #fff0f3;
+            padding-bottom: 8px;
+        }
+        .cv-category h3 i {
+            color: #e56b82;
+        }
+
+        /* Desain Kotak Kartu (Card) */
+        .cv-card {
+            background: #ffffff;
+            border: 1px solid rgba(229, 107, 130, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+        .cv-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(229, 107, 130, 0.12);
+            border-color: rgba(229, 107, 130, 0.4);
+        }
+
+        .cv-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 4px;
+        }
+        .cv-company {
+            font-size: 13px;
+            font-weight: 600;
+            color: #e56b82;
+            margin-bottom: 2px;
+        }
+        .cv-date {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .cv-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Styling Kotak Lampiran Foto/Sertifikat di dalam Card */
+        .credential-attachment {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+            padding: 8px 12px;
+            background: #faf8f9;
+            border: 1px solid rgba(229, 107, 130, 0.2);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .credential-attachment:hover {
+            background: #fff0f3;
+        }
+        .credential-thumb {
+            width: 60px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .credential-info h5 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2px;
+        }
+        .credential-info span {
+            font-size: 11px;
+            color: #e56b82;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="fade-in">
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT ME</a></li>
+                <li><a href="portofolio.html">PORTOFOLIO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container about-page">
+        
+        <!-- BAGIAN 1: BIO SINGKAT -->
+        <section class="about-section">
+            <div class="section-title">
+                <h2>ABOUT ME</h2>
+                <hr>
+            </div>
+            <div class="about-text">
+                <p>
+                    Hello! I am Delaila Chentika Kimhwa, an Information Systems undergraduate student at UIN Syarif Hidayatullah Jakarta. I have a strong foundation in data analysis, machine learning, and editorial publishing management. Dedicated to translating complex datasets into actionable, data-driven solutions and clear visual stories.
+                </p>
+            </div>
+        </section>
+
+        <!-- SISIPAN 1: EDUCATION -->
+        <section class="about-extra-section">
+            <div class="section-title">
+                <h2>EDUCATION</h2>
+                <hr>
+            </div>
+            <div class="two-col-grid">
+                <div class="info-card">
+                    <h3>UIN Syarif Hidayatullah Jakarta</h3>
+                    <p class="info-subtitle">Bachelor of Information Systems (Sistem Informasi)</p>
+                    <p class="info-period">2024 – Present</p>
+                    <p>Focused on data analytics, machine learning, business intelligence, databases, and information systems analysis.</p>
+                </div>
+                <div class="info-card">
+                    <h3>SMA Negeri 1 Tilatang Kamang</h3>
+                    <p class="info-subtitle">Natural Sciences (IPA)</p>
+                    <p class="info-period">2021 – 2024</p>
+                    <p>Active in student journalism (SCATER magazine), OSIS publication &amp; design, and regional writing/video competitions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SISIPAN 2: TOOLS & TECHNICAL SKILLS -->
+        <section class="about-extra-section">
+            <div class="section-title">
+                <h2>TOOLS &amp; TECHNICAL SKILLS</h2>
+                <hr>
+            </div>
+            <div class="two-col-grid">
+                <div class="info-card">
+                    <h3>Data, Analytics &amp; ML</h3>
+                    <p class="info-subtitle">Workflows &amp; Modeling</p>
+                    <p class="info-period">Core Technical Stack</p>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">RapidMiner</span>
+                        <span class="skill-badge">Tableau</span>
+                        <span class="skill-badge">EDA &amp; Preprocessing</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>Web, Editorial &amp; Creative</h3>
+                    <p class="info-subtitle">Publishing &amp; Design Tools</p>
+                    <p class="info-period">Content &amp; Layout</p>
+                    <div class="skill-badges">
+                        <span class="skill-badge">HTML &amp; CSS</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Canva</span>
+                        <span class="skill-badge">Lightroom &amp; CapCut</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KARTU MEMANJANG CV & PORTOFOLIO EPM (STYLE SEPERTI INTEREST) -->
+        <div class="feature-wide-list">
+            <div class="feature-card-wide">
+                <i class="fas fa-file-alt feature-card-icon" aria-hidden="true"></i>
+                <h3>Curriculum Vitae — Delaila Chentika Kimhwa</h3>
+                <p>
+                    Information Systems undergraduate at UIN Syarif Hidayatullah Jakarta covering education, OSIS &amp; SCATER magazine roles, AI/ML study track, and PBAK event coordination.
+                </p>
+                <a href="assets_pdf/CV Delaila Chentika Kimhwa_4.pdf" target="_blank" rel="noopener noreferrer" class="feature-card-link">
+                    Open CV PDF <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div class="feature-card-wide">
+                <i class="fas fa-book-open feature-card-icon" aria-hidden="true"></i>
+                <h3>Editorial Publish Management &amp; Creative Portfolio</h3>
+                <p>
+                    Showcase of editorial publishing workflows, SCATER magazine layout, regional essay &amp; creative video projects, and a crab-age prediction Machine Learning project.
+                </p>
+                <a href="assets_pdf/Portofolio EPM Delaila Chentika Kimhwa_5.pdf" target="_blank" rel="noopener noreferrer" class="feature-card-link">
+                    Open EPM Portfolio PDF <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- BAGIAN 2: MY INTERESTS & FOCUS -->
+        <section class="about-section">
+            <div class="section-title">
+                <h2>MY INTERESTS & FOCUS</h2>
+                <hr>
+            </div>
+            
+            <div class="interest-grid">
+                <!-- Card 1: Data Analytics -->
+                <div class="interest-card">
+                    <i class="fas fa-chart-bar pink-icon" aria-hidden="true"></i>
+                    <h3>Data Analytics</h3>
+                    <p>Executing Exploratory Data Analysis (EDA), data preprocessing, and uncovering hidden patterns to translate complex datasets into strategic, actionable insights.</p>
+                </div>
+
+                <!-- Card 2: Machine Learning -->
+                <div class="interest-card">
+                    <i class="fas fa-brain pink-icon" aria-hidden="true"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Building and evaluating predictive models, classification algorithms, and supervised learning workflows using Python and RapidMiner.</p>
+                </div>
+
+                <!-- Card 3: Business Intelligence -->
+                <div class="interest-card">
+                    <i class="fas fa-chart-pie pink-icon" aria-hidden="true"></i>
+                    <h3>Business Intelligence</h3>
+                    <p>Transforming raw data into interactive, insightful dashboards using Tableau and advanced analytics to support data-driven decision-making.</p>
+                </div>
+
+                <!-- Card 4: Database & Information Systems -->
+                <div class="interest-card">
+                    <i class="fas fa-database pink-icon" aria-hidden="true"></i>
+                    <h3>Database & Information Systems</h3>
+                    <p>Designing structured information systems, managing database workflows, and executing complex SQL queries for efficient data management.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN 3: EXPERIENCE & ACHIEVEMENTS -->
+        <section class="about-cv-section">
+            <div class="section-title">
+                <h2>EXPERIENCE & ACHIEVEMENTS</h2>
+                <hr>
+            </div>
+
+            <div class="cv-container-grid">
+                
+                <!-- ================= KOLOM KIRI ================= -->
+                <div class="cv-column">
+                    <!-- Kategori Digabung Menjadi Satu Judul Besar -->
+                    <div class="cv-category">
+                        <h3><i class="fas fa-briefcase"></i> Experience & Organizations</h3>
+                        
+                        <div class="cv-card">
+                            <h4>Staff Editorial Publish Management</h4>
+                            <p class="cv-company">Career Center of UIN Syarif Hidayatullah Jakarta • Apprenticeship</p>
+                            <p class="cv-date">Jun 2026 - Present • 5 mos</p>
+                            <p class="cv-desc">Managed end-to-end editorial and web publishing workflows, including manuscript curation, copyediting, and website content management via CMS to ensure accuracy, search visibility, and brand consistency.</p>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4>Publication, Design & Communication - Student Council (OSIS)</h4>
+                            <p class="cv-company">SMA Negeri 1 Tilatang Kamang</p>
+                            <p class="cv-date">2021 - 2022</p>
+                            <p class="cv-desc">Designed creative and visual concepts aligned with event themes, created engaging content for social media platforms, and managed the organization's social media publications.</p>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4>Magazine Creator & Designer, Journalist</h4>
+                            <p class="cv-company">SMA Negeri 1 Tilatang Kamang (SCATER Magazine)</p>
+                            <p class="cv-date">2021 - 2023</p>
+                            <p class="cv-desc">Created magazines with creative visual concepts, themes, and language using word processing software to attract readers' interest.</p>
+                            
+                            <!-- Lampiran Sampul Majalah SCATER Edisi III 2021 -->
+                            <a href="src/images/Majalah SCATER Edisi III 2021.png" target="_blank" class="credential-attachment" download="Cover_Majalah_SCATER.jpg">
+                                <img src="src/images/Majalah SCATER Edisi III 2021.png" alt="Cover Majalah SCATER" class="credential-thumb">
+                                <div class="credential-info">
+                                    <h5>SCATER Magazine - Cover Edition III 2021</h5>
+                                    <span>View Magazine ➔</span>
+                                </div>
+                            </a>
+
+                            <!-- Lampiran Halaman Isi Resensi Film Majalah SCATER -->
+                            <a href="src/images/Resensi Film Majalah SCATER.jpeg" target="_blank" class="credential-attachment" download="Isi_Majalah_SCATER_Intention.png">
+                                <img src="src/images/Resensi Film Majalah SCATER.jpeg" alt="Isi Majalah SCATER" class="credential-thumb">
+                                <div class="credential-info">
+                                    <h5>SCATER Magazine - Film Review Page</h5>
+                                    <span>View Page ➔</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4>Member - AI/ML Study Track</h4>
+                            <p class="cv-company">Google Developer Group on Campus UIN Syarif Hidayatullah Jakarta</p>
+                            <p class="cv-date">Dec 2024 - Jun 2025 • 7 mos</p>
+                            <p class="cv-desc">Actively participated in structured AI/ML study tracks, gaining foundational knowledge in machine learning concepts, data preprocessing, and model evaluation.</p>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4>Event Staff - Information Systems Orientation (PBAK) 2025</h4>
+                            <p class="cv-company">HIMSI UIN Jakarta</p>
+                            <p class="cv-date">Aug 2025 • Education</p>
+                            <p class="cv-desc">Responsible for designing the event rundown, managing technical execution, and guiding incoming freshmen throughout the Information Systems Freshmen Orientation.</p>
+                            
+                            <!-- Lampiran Sertifikat PBAK -->
+                            <a href="src/images/PBAK Sistem Informasi 2025.jpg" target="_blank" class="credential-attachment">
+                                <img src="src/images/PBAK Sistem Informasi 2025.jpg" alt="Sertifikat PBAK" class="credential-thumb">
+                                <div class="credential-info">
+                                    <h5>Certificate of Participation - PBAK 2025</h5>
+                                    <span>View Attachment ➔</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= KOLOM KANAN ================= -->
+                <div class="cv-column">
+                    <!-- Kategori: Certifications, Projects & Competitions -->
+                    <div class="cv-category">
+                        <h3><i class="fas fa-award"></i> Certifications, Projects & Competitions</h3>
+                        
+                        <div class="cv-card">
+                            <h4>Creative Video Project Creation (3rd Place Winner)</h4>
+                            <p class="cv-company">Communication and Information Office of Agam Regency</p>
+                            <p class="cv-date">2022</p>
+                            <p class="cv-desc">Designed a creative video concept themed "United and Rise to Foster the Fighting Spirit of the Younger Generation" with the team, and handled video and image editing using application software.</p>
+                            
+                            <!-- Lampiran Sertifikat Video Kreatif -->
+                            <a href="src/images/Video Bersatu dan Bangkit untuk Tumbuhkan Semangat Juang Generasi Muda.jpg" target="_blank" class="credential-attachment" download="Sertifikat_Juara3_Video_Agam.JPG">
+                                <img src="src/images/Video Bersatu dan Bangkit untuk Tumbuhkan Semangat Juang Generasi Muda.jpg" alt="Sertifikat Juara 3 Video Kreatif" class="credential-thumb">
+                                <div class="credential-info">
+                                    <h5>Certificate of Achievement - 3rd Place Video</h5>
+                                    <span>View Certificate ➔</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4>Essay Project Writing</h4>
+                            <p class="cv-company">Office of Women's Empowerment and Child Protection of West Sumatra</p>
+                            <p class="cv-date">2022</p>
+                            <p class="cv-desc">Conducted research and authored a paper on Minangkabau women figures from the perspective of the nation's youth, sharpening critical analytical skills and educational content writing.</p>
+                            
+                            <!-- Lampiran Sertifikat Essai -->
+                            <a href="src/images/Essay Tokoh Perempuan Minangkabau di Mata Anak Bangsa.jpg" target="_blank" class="credential-attachment" download="Sertifikat_Essai_Sumbar.jpg">
+                                <img src="src/images/Essay Tokoh Perempuan Minangkabau di Mata Anak Bangsa.jpg" alt="Sertifikat Essay" class="credential-thumb">
+                                <div class="credential-info">
+                                    <h5>Certificate of Participation - Office of Women's Empowerment and Child Protection of West Sumatra</h5>
+                                    <span>View Certificate ➔</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4>Data Analytics Essentials</h4>
+                            <p class="cv-company">Cisco Networking Academy</p>
+                            <p class="cv-date">Issued May 2026</p>
+                            <p class="cv-desc">Covered fundamental concepts of data analytics, data exploration, and data processing techniques for data-driven decision-making.</p>
+                            
+                            <!-- Lampiran Sertifikat Cisco -->
+                            <a href="src/images/Data Analytics Essentials.jpg" target="_blank" class="credential-attachment">
+                                <img src="src/images/Data Analytics Essentials.jpg" alt="Sertifikat Cisco" class="credential-thumb">
+                                <div class="credential-info">
+                                    <h5>Data Analytics Essentials - Cisco</h5>
+                                    <span>View Certificate ➔</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cv-card">
+                            <h4>National Essay Competition Participant & Finalist</h4>
+                            <p class="cv-company">Digistar x Pathseeker Undip</p>
+                            <p class="cv-date">September 2026</p>
+                            <p class="cv-desc">Demonstrated outstanding presentation skills, confidence, and ability to effectively communicate ideas during the Final Presentation Stage.</p>
+                            
+                            <!-- Lampiran Sertifikat Participant Lomba -->
+                            <a href="src/images/National Essay Competition Participant.jpeg" target="_blank" class="credential-attachment">
+                                <img src="src/images/National Essay Competition Participant.jpeg" alt="Sertifikat Participant" class="credential-thumb">
+                                <div class="credential-info">
+                                    <h5>Certificate of Participation - National Essay Competition</h5>
+                                    <span>View Certificate ➔</span>
+                                </div>
+                            </a>
+
+                            <!-- Lampiran Sertifikat Finalis Lomba -->
+                            <a href="src/images/National Essay Competition Finalist.jpeg" target="_blank" class="credential-attachment">
+                                <img src="src/images/National Essay Competition Finalist.jpeg" alt="Sertifikat Finalis" class="credential-thumb">
+                                <div class="credential-info">
+                                    <h5>Certificate of Achievement - Finalist Undip</h5>
+                                    <span>View Certificate ➔</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Delaila Chentika Kimhwa. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            const itemHref = item.getAttribute('href');
+            if (itemHref === currentPage) {
+                item.classList.add('active');
+            }
+
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetUrl = this.getAttribute('href');
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 400);
+            });
+        });
+    </script>
+</body>
+</html>

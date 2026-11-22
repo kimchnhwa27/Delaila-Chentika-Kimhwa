@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Delaila Chentika Kimhwa</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="fade-in">
+
+    <!-- Layar Loading Pembuka (Tanpa Bunga) -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <h1>Welcome To My</h1>
+            <h2 class="loading-title">Portfolio Website</h2>
+            <div class="loading-bar-container">
+                <div id="loading-bar"></div>
+            </div>
+            <p class="loading-text">Loading <span id="loading-percent">0</span>%</p>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT ME</a></li>
+                <li><a href="portofolio.html">PORTOFOLIO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="hero-content">
+            <div class="text-section">
+                <h2>Hi, I am</h2>
+                
+                <!-- Nama dengan Efek Mengetik -->
+                <h1 class="pink-name"><span id="typed-name"></span><span class="typing-cursor">|</span></h1>
+                
+                <!-- Deskripsi Profil LinkedIn -->
+                <p>Information Systems undergraduate at UIN Syarif Hidayatullah Jakarta with a strong foundation in data analysis, machine learning, and editorial publishing management. Dedicated to translating complex datasets into actionable, data-driven solutions.</p>
+                
+                <div class="tech-stack-hero">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Tableau</span>
+                    <span>Machine Learning</span>
+                </div>
+
+                <a href="portofolio.html" class="btn">MY PORTOFOLIO</a>
+
+                <div class="social-media">
+                    <div class="social-item">
+                        <i class="fab fa-linkedin social-icon"></i>
+                        <a href="https://www.linkedin.com/in/chentika-kimhwa/" target="_blank" class="social-text">Delaila Chentika Kimhwa</a>
+                    </div>
+                    <div class="social-item">
+                        <i class="fab fa-instagram social-icon"></i>
+                        <a href="https://www.instagram.com/kimchnhwa_/" target="_blank" class="social-text">kimchnhwa_</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-section">
+                <img src="src/images/foto-saya.jpeg" alt="Foto Profil" class="profile-photo">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Animasi Loading Persentase
+        let percent = 0;
+        const percentText = document.getElementById('loading-percent');
+        const loadingBar = document.getElementById('loading-bar');
+        const loadingScreen = document.getElementById('loading-screen');
+
+        const loadInterval = setInterval(() => {
+            percent += Math.floor(Math.random() * 8) + 3;
+            if (percent >= 100) {
+                percent = 100;
+                clearInterval(loadInterval);
+                setTimeout(() => {
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 600);
+                }, 300);
+            }
+            percentText.innerText = percent;
+            loadingBar.style.width = percent + '%';
+        }, 50);
+
+        // Efek Mengetik pada Nama "Delaila Chentika Kimhwa"
+        const nameToType = "Delaila Chentika Kimhwa";
+        let nameIndex = 0;
+        const nameSpeed = 100;
+
+        function typeName() {
+            if (nameIndex < nameToType.length) {
+                document.getElementById("typed-name").innerHTML += nameToType.charAt(nameIndex);
+                nameIndex++;
+                setTimeout(typeName, nameSpeed);
+            }
+        }
+        setTimeout(typeName, 1500);
+
+        // Transisi Navbar Terhubung
+        const currentPage = window.location.pathname.split('/').pop();
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            const itemHref = item.getAttribute('href');
+            if (itemHref === currentPage || (currentPage === '' && itemHref === 'index.html')) {
+                item.classList.add('active');
+            }
+
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetUrl = this.getAttribute('href');
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 400);
+            });
+        });
+    </script>
+</body>
+</html>
